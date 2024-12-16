@@ -1,5 +1,4 @@
 import socket
-
 def send_message():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     server_address = ('localhost', 12345)
