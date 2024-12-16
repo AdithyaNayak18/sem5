@@ -1,5 +1,4 @@
 import socket
-
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('localhost', 65432))
