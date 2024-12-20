@@ -15,17 +15,20 @@ void safeDelete() {
 void avoidDoubleDeletion() {
     int* ptr = new int(100); // Dynamically allocate memory
     delete ptr;              // First deletion
+    ptr = nullptr;           // Set to nullptr to avoid double deletion
 
-    if (ptr != nullptr) { // Check before deleting again
+    if (ptr != nullptr) {    // Now this condition will be false
         delete ptr;
-        ptr = nullptr;
     } else {
         std::cout << "Pointer is already deleted or null. Avoiding double deletion.\n";
     }
 }
 
 void boundsAndNullChecks() {
-    int* arr = new int[3]{10, 20, 30}; // Dynamically allocate an array
+    int* arr = new int[3]; // Dynamically allocate an array
+    arr[0] = 10;
+    arr[1] = 20;
+    arr[2] = 30;
 
     // Null pointer check
     int* nullPtr = nullptr;
